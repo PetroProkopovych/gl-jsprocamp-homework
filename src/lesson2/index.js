@@ -1,4 +1,4 @@
-import task from './task';
+import task, {sumAll} from './task';
 
 export default {
   task,
