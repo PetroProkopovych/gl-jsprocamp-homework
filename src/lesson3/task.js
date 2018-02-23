@@ -12,8 +12,8 @@ export function countOptional(required1, required2, ...rest) {
 */
 export function bindContext(fn, context) {
     const params = [].slice.call(arguments, 2);
-    return function() {
-        return fn.apply(context, [...params, ...[].slice.call(arguments)]);
+    return function(...rest) {
+        return fn.apply(context, [...params, ...rest]);
     }
 }
 
