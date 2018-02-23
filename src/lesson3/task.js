@@ -11,9 +11,9 @@ export function countOptional(required1, required2, ...rest) {
   Write your implementation of native Function.prototype.bind method
 */
 export function bindContext(fn, context) {
-    const params = [].slice.call(arguments, 2)
+    const params = [].slice.call(arguments, 2);
     return function() {
-        return fn.apply(context, params);
+        return fn.apply(context, [...params, ...[].slice.call(arguments)]);
     }
 }
 
